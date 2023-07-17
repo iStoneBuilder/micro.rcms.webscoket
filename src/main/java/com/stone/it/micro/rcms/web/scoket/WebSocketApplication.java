@@ -1,4 +1,4 @@
-package com.stone.it.micro.rcms;
+package com.stone.it.micro.rcms.web.scoket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
