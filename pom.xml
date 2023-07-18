@@ -33,7 +33,7 @@
     </dependency>
     <dependency>
       <groupId>com.stone.it</groupId>
-      <artifactId>micro.rcms.websupport</artifactId>
+      <artifactId>micro.rcms.frameweb</artifactId>
       <version>1.0.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
