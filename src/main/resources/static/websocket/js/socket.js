@@ -1,7 +1,7 @@
 //方法对象主体
 var autoWebSocket = {};
 //webSocket 服务路径
-var wsUrl = "ws://localhost:8080/ws";
+var wsUrl = "ws://localhost:60000/socket/ws";
 //webSocket对象
 var ws = null;
 //初始化页面实现
