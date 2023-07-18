@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="edge" />
-        <title>WebSocket Runtime Exec Shell</title>
-        <link rel="stylesheet" href="./websocket/css/common.css">
-        <script src="./websocket/js/jQuery.mini.v3.3.1.js"></script>
-        <script src="./websocket/js/socket.js"></script>
-    </head>
-    <body>
-        <div class="console-div-context" id="console-div-context"></div>
-        <div class="console-div-inputStr">
-            <input type="text" class="console-input" id="console-input" onkeydown="autoWebSocket.sendInputStreamShell(event)">
-        </div>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta content="edge" http-equiv="X-UA-Compatible"/>
+  <title>WebSocket Runtime Exec Shell</title>
+  <link href="./websocket/css/common.css" rel="stylesheet">
+  <script src="./websocket/js/jQuery.mini.v3.3.1.js"></script>
+  <script src="./websocket/js/socket.js"></script>
+</head>
+<body>
+<div class="console-div-context" id="console-div-context"></div>
+<div class="console-div-inputStr">
+  <input class="console-input" id="console-input" onkeydown="autoWebSocket.sendInputStreamShell(event)"
+         type="text">
+</div>
+</body>
 </html>

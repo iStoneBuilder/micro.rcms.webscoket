@@ -18,17 +18,26 @@ import java.util.concurrent.CopyOnWriteArraySet;
 @ServerEndpoint("/ws")
 public class WebSocketService {
 
-    //日志记录器
-    private Logger logger = LoggerFactory.getLogger(WebSocketService.class);
-
     //记录在线连接数
     private static Long onlineCount = 0L;
-
     //concurrent包的线程安全Set，用来存放每个客户端对应的WebSocket对象。
     private static CopyOnWriteArraySet<WebSocketService> webSocketSet = new CopyOnWriteArraySet<WebSocketService>();
-
+    //日志记录器
+    private Logger logger = LoggerFactory.getLogger(WebSocketService.class);
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
+
+    public static synchronized Long getOnlineCount() {
+        return onlineCount;
+    }
+
+    public static synchronized void addOnlineCount() {
+        WebSocketService.onlineCount++;
+    }
+
+    public static synchronized void subOnlineCount() {
+        WebSocketService.onlineCount--;
+    }
 
     /**
      * 连接建立成功调用的方法
@@ -87,7 +96,6 @@ public class WebSocketService {
          }
      }
 
-
     /**
      * 发送消息返回客户端
      * @param message
@@ -126,19 +134,6 @@ public class WebSocketService {
                 }
             }
         }).start();
-    }
-
-
-    public static synchronized Long getOnlineCount() {
-        return onlineCount;
-    }
-
-    public static synchronized void addOnlineCount() {
-        WebSocketService.onlineCount++;
-    }
-
-    public static synchronized void subOnlineCount() {
-        WebSocketService.onlineCount--;
     }
 
 }
