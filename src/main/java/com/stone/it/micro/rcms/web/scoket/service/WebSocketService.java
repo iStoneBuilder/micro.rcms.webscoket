@@ -21,9 +21,9 @@ public class WebSocketService {
     //记录在线连接数
     private static Long onlineCount = 0L;
     //concurrent包的线程安全Set，用来存放每个客户端对应的WebSocket对象。
-    private static CopyOnWriteArraySet<WebSocketService> webSocketSet = new CopyOnWriteArraySet<WebSocketService>();
+    private static final CopyOnWriteArraySet<WebSocketService> webSocketSet = new CopyOnWriteArraySet<WebSocketService>();
     //日志记录器
-    private Logger logger = LoggerFactory.getLogger(WebSocketService.class);
+    private final Logger logger = LoggerFactory.getLogger(WebSocketService.class);
     //与某个客户端的连接会话，需要通过它来给客户端发送数据
     private Session session;
 
@@ -51,7 +51,7 @@ public class WebSocketService {
         webSocketSet.add(this);
         //在线数加1
         addOnlineCount();
-        logger.info("当前连接数："+getOnlineCount()+"");
+        logger.info("当前连接数："+getOnlineCount());
     }
 
     /**
@@ -64,7 +64,7 @@ public class WebSocketService {
         webSocketSet.remove(this);
         //在线数减1
         subOnlineCount();
-        logger.info("当前连接数："+getOnlineCount()+"");
+        logger.info("当前连接数："+getOnlineCount());
     }
 
     /**
