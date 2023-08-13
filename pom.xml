@@ -18,11 +18,6 @@
       <groupId>org.springframework.boot</groupId>
     </dependency>
     <dependency>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <groupId>org.springframework.boot</groupId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <artifactId>micro.rcms.frameweb</artifactId>
       <groupId>com.stone.it</groupId>
       <version>1.0.0-SNAPSHOT</version>
